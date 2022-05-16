@@ -1,7 +1,11 @@
 package com.devmountain.noteAPP.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table (name = "Users")
@@ -16,7 +20,11 @@ public class User {
     @Column
     private String password;
 
-    public long getId() {
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JsonManagedReference
+    private Set<Note> noteSet = new HashSet<>();
+
+    public Long getId() {
         return id;
     }
 
