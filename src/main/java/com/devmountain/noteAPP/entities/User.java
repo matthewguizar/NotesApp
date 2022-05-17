@@ -1,6 +1,7 @@
 package com.devmountain.noteAPP.entities;
 
 
+import com.devmountain.noteAPP.dtos.UserDto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -55,5 +56,13 @@ public class User {
         this.id = id;
         this.username = username;
         this.password = password;
+    }
+    public User(UserDto userDto){
+        if (userDto.getUsername() != null){
+            this.username = userDto.getUsername();
+        }
+        if(userDto.getPassword() != null){
+            this.password = userDto.getPassword();
+        }
     }
 }
