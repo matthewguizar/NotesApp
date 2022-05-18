@@ -3,6 +3,9 @@ package com.devmountain.noteAPP.entities;
 
 import com.devmountain.noteAPP.dtos.UserDto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -10,10 +13,13 @@ import java.util.Set;
 
 @Entity
 @Table (name = "Users")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(unique = true)
     private String username;
@@ -25,38 +31,6 @@ public class User {
     @JsonManagedReference
     private Set<Note> noteSet = new HashSet<>();
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public User() {
-    }
-
-    public User(long id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
     public User(UserDto userDto){
         if (userDto.getUsername() != null){
             this.username = userDto.getUsername();
