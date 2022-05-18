@@ -53,5 +53,13 @@ public class NoteServiceImpl implements NoteService {
         }
         return Collections.emptyList();
     }
+    @Override
+    public Optional<NoteDto> getNoteById(Long noteId){
+        Optional<Note> noteOptional = noteRepository.findById(noteId);
+        if(noteOptional.isPresent()){
+            return Optional.of( new NoteDto(noteOptional.get()));
+        }
+        return Optional.empty();
+    }
 
 }

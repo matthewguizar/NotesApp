@@ -4,6 +4,7 @@ import com.devmountain.noteAPP.dtos.NoteDto;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 public interface NoteService {
     @Transactional
@@ -16,4 +17,6 @@ public interface NoteService {
     void updateNoteById(NoteDto noteDto);
 
     List<NoteDto> getAllNotesByUserId(Long userId);
+
+    Optional<NoteDto> getNoteById(Long noteId);
 }
