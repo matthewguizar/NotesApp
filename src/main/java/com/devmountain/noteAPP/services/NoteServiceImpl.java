@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
+import java.sql.SQLOutput;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -42,6 +43,7 @@ public class NoteServiceImpl implements NoteService {
         noteOptional.ifPresent(note -> {
             note.setBody(noteDto.getBody());
             noteRepository.saveAndFlush(note);
+
         });
     }
     @Override
