@@ -2,6 +2,10 @@ const loginForm = document.getElementById("login-form")
 const loginUsername = document.getElementById("login-username")
 const loginPassword = document.getElementById("login-password")
 
+const headers = {
+    'Content-Type': 'application/json'
+}
+const baseUrl = `http://localhost:8080/api/v1/users`
 const handleLogin = async (e) =>{
     e.preventDefault()
 
