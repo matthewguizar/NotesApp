@@ -1,15 +1,12 @@
 package com.devmountain.noteAPP.services;
 import com.devmountain.noteAPP.dtos.NoteDto;
-import com.devmountain.noteAPP.dtos.UserDto;
 import com.devmountain.noteAPP.entities.Note;
 import com.devmountain.noteAPP.entities.User;
 import com.devmountain.noteAPP.repository.NoteRepository;
 import com.devmountain.noteAPP.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
-import java.sql.SQLOutput;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;

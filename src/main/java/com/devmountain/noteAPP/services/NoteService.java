@@ -1,7 +1,6 @@
 package com.devmountain.noteAPP.services;
 
 import com.devmountain.noteAPP.dtos.NoteDto;
-import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 

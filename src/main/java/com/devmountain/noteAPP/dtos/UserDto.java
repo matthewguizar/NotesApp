@@ -16,9 +16,10 @@ public class UserDto implements Serializable {
     private Long id;
     private String username;
     private String password;
-    Set<NoteDto> noteDtoSet = new HashSet<>();
+    private Set<NoteDto> noteDtoSet = new HashSet<>();
 
-    public UserDto (User user){
+
+    public UserDto(User user){
         if (user.getId() !=null){
             this.id = user.getId();
         }

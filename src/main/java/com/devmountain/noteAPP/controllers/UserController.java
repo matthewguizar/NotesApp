@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -27,7 +26,7 @@ public class UserController {
         return userService.addUser(userDto);
     }
     @PostMapping("/login")
-    List<String> userLogin(@RequestBody UserDto userDto){
+    public List<String> userLogin(@RequestBody UserDto userDto){
         return userService.userLogin(userDto);
     }
 }
